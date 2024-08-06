@@ -1,0 +1,38 @@
+/* App.css */
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden; /* Ensures text doesn't overflow */
+  white-space: nowrap; /* Prevents text from wrapping */
+  border-right: 2px solid rgba(255, 255, 255, 0.75); /* Creates cursor effect */
+  animation: cursor-blink 0.75s step-end infinite;
+}
+
+.typewriter-text {
+  display: block;
+  opacity: 0;
+  animation: typing 4s steps(30, end) infinite, fade-out 4s steps(30, end) infinite;
+}
+
+/* Keyframes for typing effect */
+@keyframes typing {
+  0% { width: 0; opacity: 1; }
+  50% { width: 100%; opacity: 1; }
+  100% { width: 0; opacity: 0; }
+}
+
+/* Keyframes for fading effect */
+@keyframes fade-out {
+  0%, 100% { opacity: 0; }
+  10%, 40% { opacity: 1; }
+  60%, 90% { opacity: 0; }
+}
+
+/* Keyframes for cursor blinking effect */
+@keyframes cursor-blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+
+/* css for Skill skills Skill skills Skill skills Skill skills Skill skills*/
