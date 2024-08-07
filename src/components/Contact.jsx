@@ -70,7 +70,7 @@ export default function Contact({ mode }) {
         </ul>
         <div className="flex space-x-6">
           <a
-            href="https://www.linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/rohit-ruhela-2ab553257/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-3xl hover:text-blue-700"
@@ -86,7 +86,7 @@ export default function Contact({ mode }) {
             <FaTwitter />
           </a>
           <a
-            href="https://www.instagram.com/yourusername"
+            href="https://www.instagram.com/rohit122__"
             target="_blank"
             rel="noopener noreferrer"
             className="text-3xl hover:text-pink-500"
