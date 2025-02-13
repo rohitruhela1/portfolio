@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
-export default function Contact({ mode }) {
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -45,9 +45,7 @@ export default function Contact({ mode }) {
 
   return (
     <div
-      className={`flex flex-col lg:flex-row p-8 ${
-        mode ? "bg-gray-800 text-white" : "bg-gray-100 text-gray-900"
-      }`}
+      className={`flex flex-col lg:flex-row p-8 text-white`}
     >
       {/* Contact Information */}
       <div className="flex-1 lg:mr-8 mb-8 lg:mb-0">
@@ -103,7 +101,7 @@ export default function Contact({ mode }) {
           <div>
             <label
               htmlFor="name"
-              className={`block text-sm font-medium mb-1 ${mode ? "text-gray-300" : "text-gray-700"}`}
+              className={`block text-sm font-medium mb-1 `}
             >
               Name
             </label>
@@ -113,14 +111,14 @@ export default function Contact({ mode }) {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className={`w-full px-4 py-2 border rounded-md shadow-sm ${mode ? "bg-gray-700 text-white border-gray-600" : "bg-white text-gray-900 border-gray-300"}`}
+              className={`w-full px-4 py-2 border rounded-md shadow-sm border-gray-600`}
               required
             />
           </div>
           <div>
             <label
               htmlFor="email"
-              className={`block text-sm font-medium mb-1 ${mode ? "text-gray-300" : "text-gray-700"}`}
+              className={`block text-sm font-medium mb-1 `}
             >
               Email
             </label>
@@ -130,14 +128,14 @@ export default function Contact({ mode }) {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full px-4 py-2 border rounded-md shadow-sm ${mode ? "bg-gray-700 text-white border-gray-600" : "bg-white text-gray-900 border-gray-300"}`}
+              className={`w-full px-4 py-2 border rounded-md shadow-sm border-gray-600`}
               required
             />
           </div>
           <div>
             <label
               htmlFor="message"
-              className={`block text-sm font-medium mb-1 ${mode ? "text-gray-300" : "text-gray-700"}`}
+              className={`block text-sm font-medium mb-1 text-white`}
             >
               Message
             </label>
@@ -147,20 +145,23 @@ export default function Contact({ mode }) {
               value={formData.message}
               onChange={handleChange}
               rows="4"
-              className={`w-full px-4 py-2 border rounded-md shadow-sm ${mode ? "bg-gray-700 text-white border-gray-600" : "bg-white text-gray-900 border-gray-300"}`}
+              className={`w-full px-4 py-2 border rounded-md shadow-sm border-gray-600" `}
               required
             ></textarea>
           </div>
           <button
             type="submit"
-            className={`px-4 py-2 ${
-              mode ? "bg-gray-900 text-white" : "bg-blue-500 text-white"
-            } rounded hover:bg-blue-600`}
+            className={`px-4 py-2 
+              bg-gray-900 text-white
+            rounded hover:bg-blue-600`}
           >
             Send Message
           </button>
         </form>
       </div>
     </div>
+
+
+
   );
 }
