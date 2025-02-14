@@ -1,29 +1,35 @@
-import { BrowserRouter as HashRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
+import React from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Skills from './components/Skills';
-import Contact from './components/Contact';
 import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 function App() {
-
   return (
-    <HashRouter>
-      
-      <div className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed" style={{ backgroundImage: "url('/3.jpg')" }}>
+    <div 
+      className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed" 
+      style={{ backgroundImage: "url('/3.jpg')" }}
+    >
+      {/* Navbar with scroll-to-section functionality */}
+      <Navbar />
 
-        <Navbar/>
-        <main className="flex-grow p-8">
-          <Routes>
-            <Route path="/" element={<Home  />} />
-            <Route path="/skills" element={<Skills  />} />
-            <Route path="/contact" element={<Contact  />} />
-            <Route path="/projects" element={<Projects />} />
-          </Routes>
-        </main>
-      </div>
-    </HashRouter>
+      {/* Each section is given a unique id for smooth scrolling */}
+      <main className="flex-grow">
+        <section id="home" className="min-h-screen">
+          <Home />
+        </section>
+        <section id="skills" className="min-h-screen">
+          <Skills />
+        </section>
+        <section id="projects" className="min-h-screen">
+          <Projects />
+        </section>
+        <section id="contact" className="min-h-screen">
+          <Contact />
+        </section>
+      </main>
+    </div>
   );
 }
 

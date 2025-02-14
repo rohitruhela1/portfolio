@@ -2,49 +2,126 @@ import React from 'react';
 
 const projects = [
     {
-        title: 'Music App',
+        title: 'Ecom',
+        role: 'Full-Stack Developer',
+        description: [
+            'Developed a full-fledged eCommerce platform with a user-friendly interface.',
+            'Implemented cart management, product filtering, and user authentication features.',
+            'Integrated a secure payment gateway for seamless transactions.'
+        ],
+        link: 'https://github.com/rohitruhela1/Ecom'
+    },
+    {
+        title: 'FoodApp',
+        role: 'Full-Stack Developer',
+        description: [
+            'Built an online food ordering platform with a dynamic menu and order tracking.',
+            'Integrated user authentication and real-time cart updates.',
+            'Optimized UI for a responsive, mobile-friendly experience.'
+        ],
+        link: 'https://github.com/rohitruhela1/Foodapp'
+    },
+    {
+        title: 'Image Generator',
         role: 'Frontend Developer',
-        description: 'Built a music streaming application using React, Tailwind CSS, Redux, and AWS Amplify, enabling users to discover and stream music from various genres, artists, and playlists.'
+        description: [
+            'Created an AI-powered image generator that produces unique visuals based on user input.',
+            'Implemented a clean and intuitive UI with real-time preview functionality.',
+            'Utilized APIs and advanced JavaScript techniques for seamless image processing.'
+        ],
+        link: 'https://github.com/rohitruhela1/imagegenerator'
+    },
+    {
+        title: 'Netflix Clone',
+        role: 'Full-Stack Developer',
+        description: [
+            'Developed a Netflix-inspired streaming platform with authentication.',
+            'Integrated a movie database API for fetching and displaying content.',
+            'Designed an engaging UI with Tailwind CSS and React.js.'
+        ],
+        link: 'https://github.com/rohitruhela1/netflixclone'
     },
     {
         title: 'Portfolio',
         role: 'Frontend Developer',
-        description: 'Built a responsive and user-friendly portfolio website using React, Tailwind CSS.'
+        description: [
+            'Designed and built a personal portfolio website to showcase projects and skills.',
+            'Implemented responsive design for seamless viewing on all devices.',
+            'Integrated dynamic animations and interactive elements.'
+        ],
+        link: 'https://github.com/rohitruhela1/portfolio'
     },
     {
-        title: 'Soil-care',
+        title: 'To-Do List (Task2)',
         role: 'Frontend Developer',
-        description: 'Spearheaded the development and launch of an innovative online platform catering to farmers\' needs, offering services such as soil testing, water management tools, and customized fertilizers and pesticides.\n Using HTML, CSS, JS.'
+        description: [
+            'Built a simple and efficient to-do list app for task management.',
+            'Implemented local storage to save tasks persistently.',
+            'Designed a minimal and user-friendly UI using React.js.'
+        ],
+        link: 'https://github.com/rohitruhela1/RohitRuhelaNaCoFrontend/tree/main/Task2-To-Do_List'
     },
     {
-        title: 'Arduino Servo Motor Control',
-        role: 'Developer',
-        description: 'Developed and programmed an Arduino-controlled servo motor system for 180-degree rotation, implementing advanced hardware setup and software integration.'
+        title: 'Quiz App (Task3)',
+        role: 'Frontend Developer',
+        description: [
+            'Developed an interactive quiz application with multiple-choice questions.',
+            'Implemented score tracking and real-time answer validation.',
+            'Optimized for performance and responsiveness across devices.'
+        ],
+        link: 'https://github.com/rohitruhela1/RohitRuhelaNaCoFrontend/tree/main/Task3-Quiz'
     },
     {
-        title: 'Printed Circuit Board design',
-        role: 'Designer',
-        description: 'Designed and developed a PCB for an adder circuit using operational amplifiers (OPM), including schematic design, layout, and testing. Ensured accurate signal processing and optimized the board for performance and reliability.'
+        title: 'Random Color Generator (Task4)',
+        role: 'Frontend Developer',
+        description: [
+            'Created a random color generator that provides unique color codes on click.',
+            'Implemented copy-to-clipboard functionality for easy use.',
+            'Designed a simple and visually appealing UI.'
+        ],
+        link: 'https://github.com/rohitruhela1/RohitRuhelaNaCoFrontend/tree/main/Task4-Generate_Random_Color'
+    },
+    {
+        title: 'Soil Care',
+        role: 'Frontend Developer',
+        description: [
+            'Developed an agriculture-focused platform to help farmers with soil health management.',
+            'Integrated tools for soil testing and water management.',
+            'Provided customized recommendations for fertilizers and pesticides.'
+        ],
+        link: 'https://github.com/rohitruhela1/soil-care'
     }
 ];
 
 export default function Project() {
     return (
-        <div className="relative min-h-screen bg-cover bg-center flex flex-col items-center ">
-            {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/50"></div>
+        <div className="relative min-h-screen text-white flex flex-col items-center p-8">
+            {/* Title */}
+            <h1 className="text-4xl font-bold mb-10 text-center">Projects</h1>
 
-            {/* Project Content */}
-            <div className="relative z-10 w-full max-w-4xl p-8 text-white">
-                <h1 className="text-3xl font-bold mb-6 text-center">Projects</h1>
-                <div className="space-y-6">
-                    {projects.map((project, index) => (
-                        <div key={index} className="p-6 bg-white/10 backdrop-blur-lg rounded-lg shadow-md">
-                            <h2 className="text-xl font-semibold">{project.title} | {project.role}</h2>
-                            <p className="mt-2">{project.description}</p>
-                        </div>
-                    ))}
-                </div>
+            {/* Project Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+                {projects.map((project, index) => (
+                    <div 
+                        key={index} 
+                        className="p-6 bg-white/10 backdrop-blur-md rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                    >
+                        <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
+                        <ul className="text-sm text-gray-300 list-disc pl-5 space-y-2">
+                            {project.description.map((point, idx) => (
+                                <li key={idx}>{point}</li>
+                            ))}
+                        </ul>
+                        <a 
+                            href={project.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="mt-4 inline-block text-blue-400 hover:text-blue-300 transition-colors"
+                        >
+                            GitHub Link →
+                        </a>
+                    </div>
+                ))}
             </div>
         </div>
     );

@@ -17,9 +17,9 @@ export default function Skills() {
   return (
     <div className="relative min-h-screen w-full p-8 bg-black/50">
       {/* Skills Content */}
-      <div className="relative z-10 w-full max-w-4xl p-8 text-white mx-auto bg-white/10 rounded-lg shadow-lg">
+      <div className="relative z-10 w-full max-w-4xl p-8 text-white mx-auto  rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold text-center mb-6">Skills</h1>
-
+        
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {[
             { src: c, name: 'C' },
@@ -34,7 +34,14 @@ export default function Skills() {
             { src: sql, name: 'SQL' },
             { src: linux, name: 'Linux' },
             { src: git, name: 'Git' },
-            { src: matlab, name: 'MATLAB' }
+            { src: matlab, name: 'MATLAB' },
+            {src: '/public/postgresql.svg',name:'Postgresql' },
+            {src: '/public/firebase.svg' , name:'f=Firebase'},
+            {src: '/public/expressdotcom.svg',name:'Expressjs'},
+            {src: '/public/tinkercad.svg',name:'Tinkercad'},
+            {src: '/public/blender.svg',name:'Blender'},
+            {src: '/public/github.svg',name:'Github'},
+            {src: '/public/mongodb.svg',name:'Mongodb'}
           ].map((skill, index) => (
             <div key={index} className="flex flex-col items-center p-4 bg-white/20 rounded-lg shadow-md hover:scale-105 transition-transform">
               <div className="w-16 h-16 flex items-center justify-center bg-white p-2 rounded-lg shadow">
