@@ -45,7 +45,7 @@ export default function Contact() {
 
   return (
     <div
-      className={`flex flex-col lg:flex-row p-8 text-white`}
+      className={`flex flex-col lg:flex-row p-14 text-white`}
     >
       {/* Contact Information */}
       <div className="flex-1 lg:mr-8 mb-8 lg:mb-0">

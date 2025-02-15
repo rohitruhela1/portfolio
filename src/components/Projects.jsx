@@ -95,31 +95,45 @@ const projects = [
 
 export default function Project() {
     return (
-        <div className="relative min-h-screen text-white flex flex-col items-center p-8">
+        <div className="relative min-h-screen text-white flex flex-col items-center p-10">
             {/* Title */}
-            <h1 className="text-4xl font-bold mb-10 text-center">Projects</h1>
+            <h1 className="text-4xl font-bold mb-12 text-left">Projects</h1>
 
-            {/* Project Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+            {/* Timeline Container */}
+            <div className="relative w-full max-w-5xl">
+                {/* Vertical Line (Only for Desktop) */}
+                <div className="absolute top-0 left-[32px] md:left-1/2 transform -translate-x-1/2 w-1 bg-white/20 h-full"></div>
+
+                {/* Project Nodes */}
                 {projects.map((project, index) => (
                     <div 
                         key={index} 
-                        className="p-6 bg-white/10 backdrop-blur-md rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                        className="relative flex flex-col md:flex-row items-start md:items-center w-full mb-10"
                     >
-                        <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
-                        <ul className="text-sm text-gray-300 list-disc pl-5 space-y-2">
-                            {project.description.map((point, idx) => (
-                                <li key={idx}>{point}</li>
-                            ))}
-                        </ul>
-                        <a 
-                            href={project.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="mt-4 inline-block text-blue-400 hover:text-blue-300 transition-colors"
+                        {/* Connector Circle */}
+                        <div className="absolute left-[32px] md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-blue-400 rounded-full border-2 border-white"></div>
+
+                        {/* Project Card */}
+                        <div 
+                            className={`relative w-[90%] sm:w-[80%] md:w-[50%] bg-white/10 backdrop-blur-md p-12 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 
+                            mx-4 sm:mx-8 ml-12 sm:ml-16 md:ml-0
+                            ${index % 2 === 0 ? 'md:-translate-x-[5%]' : 'md:translate-x-[105%]'}`}
                         >
-                            GitHub Link →
-                        </a>
+                            <h2 className="text-2xl font-semibold mb-3">{project.title}</h2>
+                            <ul className="text-base text-gray-300 list-disc pl-5 space-y-2">
+                                {project.description.map((point, idx) => (
+                                    <li key={idx}>{point}</li>
+                                ))}
+                            </ul>
+                            <a 
+                                href={project.link} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="mt-4 inline-block text-blue-400 hover:text-blue-300 transition-colors"
+                            >
+                                GitHub Link →
+                            </a>
+                        </div>
                     </div>
                 ))}
             </div>

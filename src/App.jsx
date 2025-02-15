@@ -19,11 +19,11 @@ function App() {
         <section id="home" className="min-h-screen">
           <Home />
         </section>
-        <section id="skills" className="min-h-screen">
-          <Skills />
-        </section>
         <section id="projects" className="min-h-screen">
           <Projects />
+        </section>
+        <section id="skills" className="min-h-screen">
+          <Skills />
         </section>
         <section id="contact" className="min-h-screen">
           <Contact />
