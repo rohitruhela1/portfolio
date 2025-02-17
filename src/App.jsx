@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Profiles from './components/Profiles';
 
 function App() {
   return (
@@ -15,12 +16,15 @@ function App() {
       <Navbar />
 
       {/* Each section is given a unique id for smooth scrolling */}
-      <main className="flex-grow">
+      <main className="flex-grow mt-10">
         <section id="home" className="min-h-screen">
           <Home />
         </section>
         <section id="projects" className="min-h-screen">
           <Projects />
+        </section>
+        <section id="profiles" className="min-h-screen">
+          <Profiles/>
         </section>
         <section id="skills" className="min-h-screen">
           <Skills />

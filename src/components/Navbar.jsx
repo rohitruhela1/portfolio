@@ -8,7 +8,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'projects','skills', 'contact'];
+      const sections = ['home', 'projects','profiles','skills', 'contact'];
       let currentSection = 'home';
 
       for (let section of sections) {
@@ -32,13 +32,17 @@ export default function Navbar() {
   const scrollToSection = (section) => {
     const element = document.getElementById(section);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false); // Close menu after clicking a button
+      const offset = 80; // Adjust based on navbar height
+      const top = element.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+  
+      setIsMenuOpen(false); // Close menu after clicking
     }
   };
+  
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-black text-white shadow-md z-50">
+    <nav className="fixed top-0 left-0 w-full bg-black text-white shadow-md z-50 mb-10">
       <div className="flex items-center justify-between h-16 px-6">
         {/* Logo */}
         <div className="flex items-center">
@@ -55,7 +59,7 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden sm:flex space-x-6">
-          {['home', 'projects','skills', 'contact'].map((section) => (
+          {['home', 'projects','profiles','skills', 'contact'].map((section) => (
             <button
               key={section}
               onClick={() => scrollToSection(section)}
@@ -72,7 +76,7 @@ export default function Navbar() {
       {/* Mobile Menu (Visible when isMenuOpen is true) */}
       {isMenuOpen && (
         <div className="sm:hidden flex flex-col  text-white">
-          {['home', 'skills', 'projects', 'contact'].map((section) => (
+          {['home', 'projects','profiles', 'skills', 'contact'].map((section) => (
             <button
               key={section}
               onClick={() => scrollToSection(section)}

@@ -6,8 +6,11 @@ import { SiCodeforces, SiCodechef, SiLeetcode, SiCodingninjas } from "react-icon
 
 export default function Home() {
   return (
-    <div className="relative flex items-center justify-center h-screen bg-cover bg-center">
+    <>
+    <div className="h-10 "></div>
+    <div className="relative flex items-center justify-center h-screen bg-cover bg-center ">
       {/* Dark Overlay (No Blur on Outer Div) */}
+      
       <div className="absolute inset-0 bg-black/30"></div>
 
       {/* Main Content */}
@@ -80,5 +83,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+    </>
   );
 }
